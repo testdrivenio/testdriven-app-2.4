@@ -150,7 +150,6 @@ class TestUserService(BaseTestCase):
         self.assertIn(b'All Users', response.data)
         self.assertIn(b'<p>No users!</p>', response.data)
 
-
     def test_main_with_users(self):
         """Ensure the main route behaves correctly when users have been
         added to the database."""
