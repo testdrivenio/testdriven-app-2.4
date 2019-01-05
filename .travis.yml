@@ -14,11 +14,6 @@ before_install:
 
 before_script:
   - export REACT_APP_USERS_SERVICE_URL=http://127.0.0.1
-  - docker-compose -f docker-compose-dev.yml up --build -d
 
 script:
-  - docker-compose -f docker-compose-dev.yml exec users python manage.py test
-  - docker-compose -f docker-compose-dev.yml exec users flake8 project
-
-after_script:
-  - docker-compose -f docker-compose-dev.yml down
+  - bash test.sh
