@@ -50,6 +50,7 @@ describe('Login', () => {
       .find('tbody > tr').last()
       .find('td').contains(username);
     cy.get('.navbar-burger').click();
+    cy.wait(200);
     cy.get('.navbar-menu').within(() => {
       cy
         .get('.navbar-item').contains('User Status')
