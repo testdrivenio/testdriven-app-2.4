@@ -50,7 +50,7 @@ describe('Login', () => {
       .find('tbody > tr').last()
       .find('td').contains(username);
     cy.get('.navbar-burger').click();
-    cy.wait(200);
+    cy.wait(300);
     cy.get('.navbar-menu').within(() => {
       cy
         .get('.navbar-item').contains('User Status')
@@ -65,6 +65,7 @@ describe('Login', () => {
 
     // assert '/logout' is displayed properly
     cy.get('p').contains('You are now logged out');
+    cy.wait(300);
     cy.get('.navbar-menu').within(() => {
       cy
         .get('.navbar-item').contains('User Status').should('not.be.visible')
